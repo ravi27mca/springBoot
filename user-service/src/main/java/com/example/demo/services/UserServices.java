@@ -39,7 +39,7 @@ public class UserServices {
 		
 		UserEntity userEntity = repository.findByUserID(userId);
 		if(userEntity != null) {
-			Department department = restTemplate.getForObject("http://localhost:9010/department/"+userEntity.getDepartmentId().toString(), Department.class);
+			Department department = restTemplate.getForObject("http://depertment-service/department/"+userEntity.getDepartmentId().toString(), Department.class);
 			responseTempleteVO.setDepartment(department);
 			responseTempleteVO.setUserEntity(userEntity);
 		}
